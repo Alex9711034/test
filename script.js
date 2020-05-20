@@ -69,3 +69,32 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // console.log(isChecken || !!isClose); // ! инвертирует ложь в правду
 //                                      // !! обратная инверсия в ложь
 
+// условия
+
+// if (true) {
+//     console.log("Верно");
+// } else {
+//     console.log("Неверно");
+// }
+
+// (true === true) ? console.log('t') : console.log('f');   
+
+
+let num = 50;
+switch(num) {
+    case num < 50:
+        console.log("маловато");
+        break;
+    case num > 100:
+        console.log("многовато");
+        break;
+    case num > 80:
+        console.log("все еще многовато");
+        break;
+    case 50:       // без проверки ==
+        console.log("верно");
+        break;
+    default:
+        console.log("что-то пошло не так");
+        break;
+}
