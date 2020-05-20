@@ -1,4 +1,3 @@
-'use strict';
 
 /*
 var leftBorderWidht = 1;
@@ -69,3 +68,4 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // console.log(isChecken || !!isClose); // ! инвертирует ложь в правду
 //                                      // !! обратная инверсия в ложь
+
