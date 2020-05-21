@@ -196,3 +196,5 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // console.log( 0 || "" || 2 || undefined || true || falsе ); // 2
 
+
+
