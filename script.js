@@ -331,5 +331,6 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // переменные, которые были в области видимости во время создания 
 // этой функции.
 
-console.log( isNaN('hello world') );        // true
-console.log( Number.isNaN(NaN) ); // true, иначе false
+// console.log( isNaN('hello world') );        // true
+// console.log( Number.isNaN(NaN) ); // true, иначе false
+
