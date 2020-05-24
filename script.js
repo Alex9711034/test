@@ -335,3 +335,92 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // console.log( Number.isNaN(NaN) ); // true, иначе false
 
 
+// callback функция вначале точно выполн. код console.log
+// а потом callback()
+
+// function learnJS(lang, callback) {
+//     console.log("Я учу JS" + lang);
+//     callback();
+//     // setTimeout(() => console.log("Я учу JS" + lang), 5000);
+// }
+
+// function done() {
+//     console.log("Я прошел 3-й урок");
+// }
+
+// learnJS("JavaScript", done);   // без ()
+
+// object
+
+// let obj = {
+//     width: 1024,
+//     heigth: 1024,
+//     name: "test"
+// };
+
+// let a = "opredele";
+// obj[a] = 393;
+// obj.bool = false;
+
+// obj.colors = {
+//     border: "black",
+//     bg: "red"    
+// };
+
+// delete obj.bool;
+// // console.log(obj);
+
+// for (let key in obj) {
+//     console.log('Свойство: ' + key + ' значение: ' + obj[key]);
+// }
+// console.log(Object.keys(obj).length); // кол-во объектов
+
+// массив
+
+// let arr = [1,2,3,{},7];
+// let n = arr.shift(); // удаляет и возвращает первый элемент
+// let k = arr.pop(); // удаляет и возвращает последний элемент 
+// arr.unshift({});   // добавляет первый элемент в массив
+// arr.push("5");     // добавляет последний элемент в массив
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// arr.forEach(function(item, i, mass) {
+//     console.log(i + ' : ' + item); // + " (массив: " + mass + ' )')
+// });
+// значение элемента (item)
+// индекс элемента (i)
+// массив, по которому осуществляется проход (mass)
+
+// let arr = [1,2,3,4,8,9];
+
+// for (let key in arr) {   // покажет ключи
+//     console.log( key + ' => ' + arr[key] );
+// }
+
+// for (let key of arr) {  // покажет значения
+//     console.log(key);
+// }
+
+// let ans = prompt("товары через запятую", ""),
+//     arr = [];
+
+// arr = ans.split(','); разбивает массив на по делиметру ','
+// console.log(arr);
+
+// let arr = ["A","l","e","x"]; // склеивает  
+// console.log(arr.join(''));
+
+// let arr = ["A","l","e","x"]; // сортирует по алфавиту  
+// console.log(arr.sort());
+
+// let arr = [1,15,4],
+//     i = arr.sort(compareNum);  // фун-я передается без ()
+
+// function compareNum(a,b) {
+//     return a-b;
+// }
+
+// console.log(arr);
