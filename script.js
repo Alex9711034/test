@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Одинарные и двойные кавычки работают, по сути, одинаково, 
 // а если использовать обратные кавычки, то в такую строку мы 
 // сможем вставлять произвольные выражения, обернув их в ${…}:
@@ -9,7 +8,7 @@
 //   return a + b;
 // }
 
-// alert(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
+// console.log(`1 + 2 = ${sum(1, 2)}.`); // 1 + 2 = 3.
 
 /*
 var leftBorderWidht = 1;
@@ -132,7 +131,7 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // }
 
 // let x = 5; 
-// alert( ++x ); // будет 5
+// console.log( ++x ); // будет 5
 
 // console.log([ ] + false - null + true);
 // // [] это 0 при выражении + fasle = false
@@ -416,11 +415,152 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // let arr = ["A","l","e","x"]; // сортирует по алфавиту  
 // console.log(arr.sort());
 
-// let arr = [1,15,4],
-//     i = arr.sort(compareNum);  // фун-я передается без ()
+// let arr = [1,15,4];
+// arr.sort(compareNum);  // фун-я передается без ()
 
 // function compareNum(a,b) {
 //     return a-b;
 // }
 
 // console.log(arr);
+
+// ООП
+
+// let soldier = {     // базовый объект 
+//     health: 400,
+//     armor: 100
+// };
+
+// let jonh = {
+//     health: 100
+// };
+
+// jonh.__proto__ = soldier;
+
+// console.log(jonh);
+// console.log(jonh.armor);
+
+// function User(name) {        // фун-я конструктор с заглавной
+//     this.name = name;        // this - это текущий объект User
+  
+//     this.sayHi = function() {
+//       console.log( "Меня зовут: " + this.name ); // это текущий объект
+//     };
+//   }
+  
+//   let vasya = new User("Саша");
+  
+//   vasya.sayHi();
+
+// class
+  
+// Базовый синтаксис для классов выглядит так:
+
+// class MyClass {
+//   prop = value; // свойство
+//   constructor(...) { // конструктор
+//     // ...
+//   }
+//   method(...) {} // метод
+//   get something(...) {} // геттер
+//   set something(...) {} // сеттер
+//   [Symbol.iterator]() {} // метод с вычисляемым именем 
+                            // (здесь символом)
+//   // ...
+// }
+// MyClass технически является функцией (той, которую мы определяем
+// как constructor), в то время как методы, геттеры и сеттеры
+// записываются в MyClass.prototype.
+
+// class Clock {
+//     constructor({ template }) {
+//       this.template = template;
+//     }
+  
+//     render() {
+//       let date = new Date();
+  
+//       let hours = date.getHours();
+//       if (hours < 10) hours = '0' + hours;
+  
+//       let mins = date.getMinutes();
+//       if (mins < 10) mins = '0' + mins;
+  
+//       let secs = date.getSeconds();
+//       if (secs < 10) secs = '0' + secs;
+  
+//       let output = this.template
+//         .replace('h', hours)
+//         .replace('m', mins)
+//         .replace('s', secs);
+  
+//       console.log(output);
+//     }
+  
+//     stop() {
+//       clearInterval(this.timer);
+//     }
+  
+//     start() {
+//       this.render();
+//       this.timer = setInterval(() => this.render(), 1000);
+//     }
+//   }
+  
+  
+//   let clock = new Clock({template: 'h:m:s'});
+//   clock.start();
+
+// наследование классов
+
+class Animal {
+    constructor(name) {
+      this.speed = 0;
+      this.name = name;
+    }
+    run(speed) {
+      this.speed = speed;
+      console.log(`${this.name} бежит со скоростью ${this.speed}.`);
+    }
+    stop() {
+      this.speed = 0;
+      console.log(`${this.name} стоит.`);
+    }
+  }
+  
+  // Наследуем от Animal указывая "extends Animal"
+  class Rabbit extends Animal {
+    // переопределяем родительский конструктор с добавлением 
+    // нового значения - earLength = длина уха
+    constructor(name, earLength) {
+        super(name);   // оставляем name за определенным в родителе
+        this.earLength = earLength;
+    }  
+    hide() {
+      console.log(`${this.name} прячется!`);
+    }
+    stop() {
+        // переопределение родительской ф-ции stop
+        // console.log(`${this.name} не двигается!`); 
+        super.stop(); // вызываем родительский метод stop
+        // или 
+        // setTimeout(() => super.stop(), 1000); // через 1 сек.
+        this.hide();  // и затем hide() этого класса
+    }
+  }
+  
+  let rabbit = new Rabbit("Белый кролик", "10 см.");
+  
+//   class Wolf extends Animal {
+//       roar() {
+//           console.log(`${this.name} рычит!`);
+//       }
+//   }
+//   let wolf = new Wolf("Серый волк");
+// wolf.stop();
+//   console.log(rabbit);
+
+rabbit.run(5); // Белый кролик бежит со скоростью 5.
+console.log(`длина уха ${rabbit.name} - ` + rabbit.earLength);
+//   rabbit.hide(); // Белый кролик прячется!
+
