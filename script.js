@@ -513,43 +513,43 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // наследование классов
 
-class Animal {
-    constructor(name) {
-      this.speed = 0;
-      this.name = name;
-    }
-    run(speed) {
-      this.speed = speed;
-      console.log(`${this.name} бежит со скоростью ${this.speed}.`);
-    }
-    stop() {
-      this.speed = 0;
-      console.log(`${this.name} стоит.`);
-    }
-  }
+// class Animal {
+//     constructor(name) {
+//       this.speed = 0;
+//       this.name = name;
+//     }
+//     run(speed) {
+//       this.speed = speed;
+//       console.log(`${this.name} бежит со скоростью ${this.speed}.`);
+//     }
+//     stop() {
+//       this.speed = 0;
+//       console.log(`${this.name} стоит.`);
+//     }
+//   }
   
   // Наследуем от Animal указывая "extends Animal"
-  class Rabbit extends Animal {
-    // переопределяем родительский конструктор с добавлением 
-    // нового значения - earLength = длина уха
-    constructor(name, earLength) {
-        super(name);   // оставляем name за определенным в родителе
-        this.earLength = earLength;
-    }  
-    hide() {
-      console.log(`${this.name} прячется!`);
-    }
-    stop() {
-        // переопределение родительской ф-ции stop
-        // console.log(`${this.name} не двигается!`); 
-        super.stop(); // вызываем родительский метод stop
-        // или 
-        // setTimeout(() => super.stop(), 1000); // через 1 сек.
-        this.hide();  // и затем hide() этого класса
-    }
-  }
+  // class Rabbit extends Animal {
+  //   // переопределяем родительский конструктор с добавлением 
+  //   // нового значения - earLength = длина уха
+  //   constructor(name, earLength) {
+  //       super(name);   // оставляем name за определенным в родителе
+  //       this.earLength = earLength;
+  //   }  
+  //   hide() {
+  //     console.log(`${this.name} прячется!`);
+  //   }
+  //   stop() {
+  //       // переопределение родительской ф-ции stop
+  //       // console.log(`${this.name} не двигается!`); 
+  //       super.stop(); // вызываем родительский метод stop
+  //       // или 
+  //       // setTimeout(() => super.stop(), 1000); // через 1 сек.
+  //       this.hide();  // и затем hide() этого класса
+  //   }
+  // }
   
-  let rabbit = new Rabbit("Белый кролик", "10 см.");
+  // let rabbit = new Rabbit("Белый кролик", "10 см.");
   
 //   class Wolf extends Animal {
 //       roar() {
@@ -560,7 +560,60 @@ class Animal {
 // wolf.stop();
 //   console.log(rabbit);
 
-rabbit.run(5); // Белый кролик бежит со скоростью 5.
-console.log(`длина уха ${rabbit.name} - ` + rabbit.earLength);
+// rabbit.run(5); // Белый кролик бежит со скоростью 5.
+// console.log(`длина уха ${rabbit.name} - ` + rabbit.earLength);
 //   rabbit.hide(); // Белый кролик прячется!
+
+// статические свойства и методы
+
+// class Article {
+//   constructor(title, date) {
+//     this.title = title;       // this при вызове Article.constructor()
+//                               // является сам конструктор класса
+//                               // Article
+//                               // (правило «объект до точки»).
+//     this.date = date;
+//   }
+
+//   static compare(articleA, articleB) {
+//     return articleA.date - articleB.date;
+//   }
+// }
+
+// // использование
+// let articles = [
+//   new Article("HTML", new Date(2019, 1, 1)),
+//   new Article("CSS", new Date(2019, 0, 1)),
+//   new Article("JavaScript", new Date(2019, 11, 1))
+// ];
+
+// articles.sort(Article.compare);
+
+// console.log(articles[0].title); // CSS
+
+
+// фабричный метод 
+
+// class Article {
+//   constructor(title, date) {
+//     this.title = title;
+//     this.date = date;
+//   }
+
+//   static createTodays() {
+//     // помним, что this = Article
+//     return new this("Сегодняшний дайджест " + new Date() );
+//   }
+// }
+
+// let article = Article.createTodays();
+
+// console.log( article.title ); // Сегодняшний дайджест
+
+// Статическими их можно назвать только в контексте того, что если
+// использовать функции как конструкторы, то в создаваемых объектах
+// это свойство будет отсутствовать, и доступ к ним будет
+// осуществляться только по имени класса.
+
+// приватные и защищенные методы и свойства
 
