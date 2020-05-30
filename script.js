@@ -617,3 +617,99 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // приватные и защищенные методы и свойства
 
+// Защищённые свойства обычно начинаются с префикса _
+
+
+// class CoffeeMachine {
+  
+//   _waterAmount = 0;
+
+//   set waterAmount(value) {
+//     if (value < 0) throw new Error("Отрицательное количество воды");
+//     this._waterAmount = value;
+//   }
+
+//   get waterAmount() {
+//     return this._waterAmount;
+//   }
+
+//   constructor(power) {
+//     this._power = power;
+//   }
+
+// }
+
+// // создаём новую кофеварку
+// let coffeeMachine = new CoffeeMachine(100);
+
+// // устанавливаем количество воды
+// coffeeMachine.waterAmount = -10; // Error: Отрицательное кол.во воды
+
+// console.log(coffeeMachine.waterAmount);
+// // _waterAmount = 0; - защищенное свойство от отрицательного значения
+
+// class CoffeeMachine {
+//   // ...
+
+//   constructor(power) {
+//     this._power = power;
+//   }
+
+//   get power() {
+//     return this._power;
+//   }
+
+// }
+
+// // создаём кофеварку
+// let coffeeMachine = new CoffeeMachine(100);
+
+// console.log(`Мощность: ${coffeeMachine.power}W`); // Мощность: 100W
+
+// coffeeMachine.power = 25; // Error (no setter)
+
+// // нету сеттера, .power только чтения
+
+// приватное свойство
+
+// class CoffeeMachine {
+
+//   #waterAmount = 0;
+
+//   get waterAmount() {
+//     return this.#waterAmount;
+//   }
+
+//   set waterAmount(value) {
+//     if (value < 0) throw new Error("Отрицательный уровень воды");
+//     this.#waterAmount = value;
+//   }
+// }
+
+// let machine = new CoffeeMachine();
+
+//machine.waterAmount = 100;
+//ssconsole.log(machine.#waterAmount); // Error
+
+// class Rabbit {}
+// let rabbit = new Rabbit();
+
+// // это объект класса Rabbit?
+// console.log( rabbit instanceof Rabbit ); // true
+
+// Обычно оператор instanceof просматривает для проверки цепочку
+// прототипов. Но это поведение может быть изменено при помощи
+// статического метода Symbol.hasInstance.
+
+// проверка instanceof будет полагать,
+// что всё со свойством canEat - животное Animal
+// class Animal {
+//   static [Symbol.hasInstance](obj) {
+//     if (obj.canEat) return true;
+//   }
+// }
+
+// let obj = { canEat: true };
+// console.log(obj instanceof Animal); 
+// // true: вызван Animal[Symbol.hasInstance](obj)
+
