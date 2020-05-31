@@ -1,12 +1,11 @@
 'use strict';
 
-
 let appData = {
     incom: '',       // бюджет
     timeDate: '',
     expenses: {},          // обязат. расходы
     optionalExpenses: {},  // необяз. расходы
-    income: [],            // доп. доход
+    chooseIncome: [],            // доп. доход
     savings: true,
 };
 
@@ -90,8 +89,43 @@ function checkSavings() {
     }
 }
 
-detectDayBudget();
-detectLevel();
-chooseExpenses();
-chooseOptExpenses();
-checkSavings();
+function detectChooseIncome() {
+
+    let a = +prompt("Сколько статей доп. дохода?", "");
+
+    for (let i = 0; i < a; i++) {
+       
+        let ans = prompt("Какие статьи доп. дохода?", "");
+        
+        if ( (typeof(ans)) === 'string'  
+        && (typeof(ans)) != null 
+        && ans != '' && !Number.isInteger(Math.round(Number(ans))) ) {
+// Number.isInteger - определяет, является ли переданное значение
+// целым числом. Number - переводит в число. Math.round - отсек.дробь
+            appData.chooseIncome[i] = ans;
+        } else {
+            --i;
+            continue;
+        }
+    }
+
+appData.chooseIncome.forEach(function(item,i) {
+        console.log((i+1) + ' : ' + item);
+}); 
+
+}
+
+// detectDayBudget();
+// detectLevel();
+// chooseExpenses();
+// chooseOptExpenses();
+// checkSavings();
+// detectChooseIncome();
+
+// console.log('\nНаша программа включает в себя данные:\n');
+
+// for (let key in appData) {   // покажет ключи
+            
+//          console.log( key + ' => ' + appData[key] );
+//      }
+
