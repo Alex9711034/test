@@ -724,7 +724,49 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 //     // по селектору можно все перебрать и вложенности тоже
 //     // . - класс, # - id, [] - атрибут ( '.wrapper .heart')
 //     // обращается по вложенности
-//     oneHeart = document.querySelector('.heart'); // первый селектор 
+//     oneHeart = document.querySelector('.heart'), // первый селектор
+//     //
+//     wrapper = document.querySelector('.wrapper'); 
 
+// box.style.backgroundColor = 'blue';
+// btn[1].style.borderRadius = '100%';
 
+// circle[0].style.backgroundColor = 'red';
+// circle[1].style.backgroundColor = 'yellow';
+// circle[2].style.backgroundColor = 'green';
+
+// for (let i = 0; i < heart.length; i++) {
+//   heart[i].style.backgroundColor = 'grey';
+// }
+
+// let div = document.createElement('div');
+// //    text = document.createElement('тут был я'); // баг
+
+// div.classList.add('black'); // добавляем класс black к div
+// // div.classList.toggle('black'); // добавляет если нету и наоборот
+
+// div.innerHTML = '<h1>Hello World!</h1>';
+// // вставляем текст в блок
+// div.textContent = 'Security method';
+// // безопасный способ
+
+// // document.body.appendChild(div); 
+// // добавили блок div c классом black в конец body, appendChild-ребенок
+
+// // wrapper.appendChild(div); 
+// // добавляет в конец обертки wrapper
+
+// wrapper.insertBefore(div, circle[1]);
+// // добавит перед вторым элементом circle
+
+// wrapper.removeChild(circle[2]);
+// // удалит последний circle
+
+// document.body.insertBefore(div, heart[1]);
+// // здесь родитель document.body
+
+// wrapper.replaceChild(btn[1], circle[1]);
+// // wrapper становится родителем для класса circle
+
+// console.log(div);
 
