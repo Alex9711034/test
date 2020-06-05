@@ -713,6 +713,9 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // console.log(obj instanceof Animal); 
 // // true: вызван Animal[Symbol.hasInstance](obj)
 
+
+
+
 // получение элементов со страницы
 
 // let box = document.getElementById('box'), // берем по id
