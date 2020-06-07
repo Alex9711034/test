@@ -107,3 +107,36 @@ let appData = {
     }
 };
 
+// (1) Получить кнопку "Начать расчет" через id
+// (2) Получить все блоки в правой части программы через классы
+// (которые имеют класс название-value, начиная с и заканчивая)
+// (3) Получить поля(input) c обязательными расходами через класс.
+// (class=”expenses-item”)
+// (4) Получить кнопки “Утвердить” и “Рассчитать” через Tag, 
+// каждую в своей переменной. btn[0] - утвердить
+// (5) Получить поля для ввода необязательных расходов
+// (optionalexpenses-item) при помощи querySelectorAll
+// (6) Получить оставшиеся поля через querySelector 
+// (статьи возможного дохода, чекбокс, сумма, процент, 
+// год, месяц, день)
+
+
+let start = document.getElementById('start'),
+    resultTable = document.querySelectorAll('.result-table'),
+    expensesItem = document.querySelectorAll('.expenses-item'),
+    btnAll = document.getElementsByTagName('button'),
+    expensesItemBtn = btnAll[0],
+    optionalExpensesBtn = btnAll[1],
+    countBudgetBtn = btnAll[2],
+    buttonStart = btnAll[3],
+    optionalExpensesItem = 
+        document.querySelectorAll('.optionalexpenses-item'),
+    chooseIncome = document.querySelector('.choose-income'),
+    checkSavings = document.querySelector('.checksavings'),
+    chooseSum = document.querySelector('.choose-sum'),
+    choosePercent = document.querySelector('.choose-percent'),
+    yearValue = document.querySelector('.year-value'),
+    monthValue = document.querySelector('.month-value'),
+    dayValue = document.querySelector('.day-value');
+
+    
