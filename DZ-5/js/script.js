@@ -15,7 +15,7 @@ ul[0].appendChild(li);
 ul[0].insertBefore(menuItem[2], menuItem[1]);
 
 bodyAll[0].style.backgroundImage = "url(img/apple_true.jpg)";
-// если локально, путь начинается от каталога где index.html
+
 
 title.textContent = 'Мы продаем только подлинную технику Apple';
 

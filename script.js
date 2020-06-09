@@ -773,3 +773,49 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // console.log(div);
 
+ // обработка событий 
+
+ // (1) использовать атрибут html, не надо использовать
+
+//  let btn = document.querySelectorAll('button'),
+//      wrap = document.querySelector('.wrapper'),
+//      link = document.querySelector('a');
+
+//  btn[0].onclick = function() {  // не ставить 2й раз более новая ф-я переназначит старую
+//       alert('жмякнул');
+//  };           
+
+//  btn[0].onclick = function() {
+//    alert('опять жмакнул');
+//  };
+
+// btn[0].addEventListener('click', function() { // не затирает второй вызов
+//     alert('жмякнул');
+    
+// });
+
+// btn[1].addEventListener('mouseenter', function() {
+//   alert('навел мышь');
+// });
+
+// btn[2].addEventListener('click', function(event) { // event отслеживает события, имеет свои фун-и, может называться по другому, для управления тем, с чем взаимодействуем.(перевод: добавить слушатель событий)
+  // console.log(event);
+  // let target = event.target;
+  // target.style.display = 'none';
+//   console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+// });
+
+// wrap.addEventListener('click', function(){ // target срабатывает на блоке wrap  
+//   console.log('Произошло событие ' + event.type + ' на элементе ' + event.target); 
+// });
+
+// btn.forEach(function(item) { // обрабатываем все кнопки, forEach - перебирает все и далее добавляет действие мыши(уход мыши)
+//   item.addEventListener('mouseleave', function() {
+//     console.log("Вышли");
+//   });
+// });
+
+// link.addEventListener('click', function(event) {
+//   event.preventDefault(); // (предовратить дефолт)
+//   console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+// });
