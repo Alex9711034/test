@@ -221,6 +221,14 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 // console.log( parseFloat(twelve) );
 // // возвращате 12.2 десятичные
 
+///
+
+// if ( (typeof(ans)) === 'string'  
+// && (typeof(ans)) != null 
+// && ans != '' && !Number.isInteger(Math.round(Number(ans))) ) { // Number.isInteger - определяет, является ли переданное значение целым числом. Number - переводит в число. Math.round - отсек.дробь
+// appData.chooseIncome.sort();//сортировка по алфавиту  
+
+
 // замыкания
 
 // function createCounter() {                           // 1
@@ -693,3 +701,11 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 //   console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
 // });
 
+
+// chooseIncome.addEventListener('input', function() { // при вводе текста он будет сразу отображаться в отдельном поле также для тега textarea и select событие change записывает в том момент когда мышка кликает за пределами строки ввода  
+    
+//   let items = chooseIncome.value;
+//   appData.chooseIncome = items.split(', '); 
+//   incomeValue.textContent = appData.chooseIncome; 
+
+// });
