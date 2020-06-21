@@ -645,7 +645,7 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 
 // wrapper.appendChild(div);... добавляет в конец обертки wrapper
 
-// wrapper.insertBefore(div, circle[1]);... добавит перед вторым элементом circle
+// wrapper.insertBefore(div, id);... добавит перед id. Втрой параметр лучше определить по id: let fodo = document.getElemetById('id');
 
 // wrapper.removeChild(circle[2]);... удалит последний circle
 
@@ -709,3 +709,11 @@ console.log(parseInt('15px')); //(3) отделит только цисло
 //   incomeValue.textContent = appData.chooseIncome; 
 
 // });
+
+function sayHello() {
+  console.log('привет, 3 сек');
+}
+
+// let timerId = setTimeout(sayHello, 3000);
+let timerId = setInterval(sayHello, 3000);
+clearTimeout(timerId);
